@@ -5,13 +5,13 @@ import { units } from './units.js'
  * @param {Number} quantity The quantity of the from unit
  * @param {String} from the original unit to be converted
  * @param {String} to the unit to be converted to
- * @returns {Object|number} returns error if either unit doesn't exist or quantity is invalid or returns converted unit amount
+ * @returns {Object} returns error if either unit doesn't exist or quantity is invalid or returns converted quantity and unit
  */
 const converter = (
   quantity: number,
   from: string,
   to: string = 'grams'
-): number | { error: string } => {
+): { quantity: number; unit: string } | { error: string } => {
   if (quantity <= 0) return { error: `Quantity must be greater than 0` }
 
   const fromVal = from.length > 1 ? from.toLowerCase() : from
@@ -27,7 +27,7 @@ const converter = (
 
   const ratio = fromUnitGrams / toUnitGrams
   const total = ratio * quantity
-  return total
+  return { quantity: total, unit: to }
 }
 
 export { converter }
