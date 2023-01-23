@@ -1,0 +1,19 @@
+{
+  "name": "@jclind/ingredient-unit-converter",
+  "version": "1.0.0",
+  "description": "Converts between common ingredient units",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jclind/ingredient-unit-converter.git"
+  },
+  "author": "Jesse Lind",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jclind/ingredient-unit-converter/issues"
+  },
+  "homepage": "https://github.com/jclind/ingredient-unit-converter#readme"
+}
