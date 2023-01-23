@@ -2,9 +2,14 @@
   "name": "@jclind/ingredient-unit-converter",
   "version": "1.0.0",
   "description": "Converts between common ingredient units",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -15,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/jclind/ingredient-unit-converter/issues"
   },
-  "homepage": "https://github.com/jclind/ingredient-unit-converter#readme"
+  "homepage": "https://github.com/jclind/ingredient-unit-converter#readme",
+  "dependencies": {
+    "typescript": "^4.9.4"
+  }
 }
