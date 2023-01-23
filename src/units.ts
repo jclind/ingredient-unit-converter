@@ -191,7 +191,7 @@ export const units = [
     ],
     grams: 118.29,
   },
-  { names: ['cup', 'cups', 'C.', 'C', 'Cs.', 'Cs'], grams: 236.588 },
+  { names: ['cup', 'cups', 'C.', 'C', 'c.', 'c', 'Cs.', 'Cs'], grams: 236.588 },
   { names: ['pint', 'pints', 'pt.', 'pt', 'pts.', 'pts'], grams: 473.176 },
   { names: ['quart', 'quarts', 'qt.', 'qt', 'qts.', 'qts'], grams: 946.353 },
   {
