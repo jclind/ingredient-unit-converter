@@ -1,4 +1,7 @@
-export const units = [
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.units = void 0;
+exports.units = [
     {
         names: [
             'drop',
@@ -215,4 +218,3 @@ export const units = [
     },
     { names: ['liter', 'liters', 'l.', 'l', 'ls.', 'ls'], grams: 1000 },
 ];
-//# sourceMappingURL=units.js.map

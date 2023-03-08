@@ -1,4 +1,4 @@
-import { units } from './units.js'
+import { units } from './src/units.js'
 
 /**
  * Takes the quantity of the original unit and converts it to another given unit
