@@ -141,6 +141,10 @@ export const units = [
     grams: 14.78,
   },
   {
+    names: ['oz.', 'oz', 'ozs.', 'ozs', 'ounce', 'ounces'],
+    grams: 29.57,
+  },
+  {
     names: [
       'fluid ounce',
       'fluidounce',
@@ -154,14 +158,8 @@ export const units = [
       'flozs',
       'fl.ozs',
       'flozs.',
-      'oz.',
-      'oz',
-      'ozs.',
-      'ozs',
-      'ounce',
-      'ounces',
     ],
-    grams: 29.57,
+    grams: 28.35,
   },
   {
     names: [
