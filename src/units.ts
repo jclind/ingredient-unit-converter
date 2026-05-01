@@ -54,7 +54,7 @@ export const units = [
       'ssps.',
       'ssps',
     ],
-    grams: 17.1,
+    grams: 1.23,
   },
   {
     names: [
@@ -142,7 +142,7 @@ export const units = [
   },
   {
     names: ['oz.', 'oz', 'ozs.', 'ozs', 'ounce', 'ounces'],
-    grams: 29.57,
+    grams: 28.3495,
   },
   {
     names: [
@@ -159,7 +159,7 @@ export const units = [
       'fl.ozs',
       'flozs.',
     ],
-    grams: 28.35,
+    grams: 29.5735,
   },
   {
     names: [

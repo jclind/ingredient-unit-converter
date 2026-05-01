@@ -1,18 +1,19 @@
 import { units } from './src/units.js'
 
 /**
- * Takes the quantity of the original unit and converts it to another given unit
- * @param {Number} quantity The quantity of the from unit
- * @param {String} from the original unit to be converted
- * @param {String} to the unit to be converted to
- * @returns {Object} returns error if either unit doesn't exist or quantity is invalid or returns converted quantity and unit
+ * Converts a quantity from one ingredient unit to another.
+ * @param quantity - must be greater than 0
+ * @param from - the starting unit (e.g. 'tbsp', 'oz')
+ * @param to - the target unit, defaults to 'grams'
+ * @returns { quantity: number, unit: string }
+ * @throws if quantity <= 0 or either unit is unrecognised
  */
 const converter = (
   quantity: number,
   from: string,
   to: string = 'grams'
-): { quantity: number; unit: string } | { error: string } => {
-  if (quantity <= 0) return { error: `Quantity must be greater than 0` }
+): { quantity: number; unit: string } => {
+  if (quantity <= 0) throw new Error('Quantity must be greater than 0')
 
   const fromVal = from.length > 1 ? from.toLowerCase() : from
   const toVal = to.length > 1 ? to.toLowerCase() : to
@@ -22,12 +23,12 @@ const converter = (
   const { grams: toUnitGrams } =
     units.find(unit => unit.names.includes(toVal)) ?? {}
 
-  if (!fromUnitGrams) return { error: `Unit unknown: ${fromVal}` }
-  if (!toUnitGrams) return { error: `Unit unknown: ${toVal}` }
+  if (!fromUnitGrams) throw new Error(`Unsupported unit '${fromVal}'`)
+  if (!toUnitGrams) throw new Error(`Unsupported unit '${toVal}'`)
 
   const ratio = fromUnitGrams / toUnitGrams
   const total = ratio * quantity
   return { quantity: total, unit: to }
 }
 
-export { converter }
+export { converter, converter as convert }
