@@ -83,7 +83,7 @@ export const units = [
             'fldrs',
             'fl.drs',
         ],
-        grams: 3.69,
+        grams: 3.69669, // 1 US fluid dram = 3.6966911953125 mL
     },
     {
         names: [
@@ -100,7 +100,7 @@ export const units = [
             'ts.',
             'ts',
         ],
-        grams: 4.92,
+        grams: 4.92892, // 1 US teaspoon = 4.92892159375 mL
     },
     {
         names: [
@@ -121,7 +121,7 @@ export const units = [
             'dstspns.',
             'dstspns',
         ],
-        grams: 9.85,
+        grams: 9.85784, // 2 US teaspoons = 2 × 4.92892 mL
     },
     {
         names: [
@@ -138,11 +138,11 @@ export const units = [
             'Ts.',
             'Ts',
         ],
-        grams: 14.78,
+        grams: 14.78676, // 1 US tablespoon = 14.78676478125 mL
     },
     {
         names: ['oz.', 'oz', 'ozs.', 'ozs', 'ounce', 'ounces'],
-        grams: 28.3495,
+        grams: 28.34952, // 1 avoirdupois ounce = 28.3495231 g
     },
     {
         names: [
@@ -159,7 +159,7 @@ export const units = [
             'fl.ozs',
             'flozs.',
         ],
-        grams: 29.5735,
+        grams: 29.57353, // 1 US fluid ounce = 29.5735295625 mL
     },
     {
         names: [
@@ -172,7 +172,7 @@ export const units = [
             'wgfs.',
             'wgfs',
         ],
-        grams: 59.14,
+        grams: 59.14706, // 2 US fluid ounces = 59.1470591 mL
     },
     {
         names: [
@@ -187,17 +187,32 @@ export const units = [
             'tcfs.',
             'tcfs',
         ],
-        grams: 118.29,
+        grams: 118.29412, // 4 US fluid ounces = 118.2941182 mL
     },
-    { names: ['cup', 'cups', 'C.', 'C', 'c.', 'c', 'Cs.', 'Cs'], grams: 236.588 },
-    { names: ['pint', 'pints', 'pt.', 'pt', 'pts.', 'pts'], grams: 473.176 },
-    { names: ['quart', 'quarts', 'qt.', 'qt', 'qts.', 'qts'], grams: 946.353 },
+    {
+        names: ['cup', 'cups', 'C.', 'C', 'c.', 'c', 'Cs.', 'Cs'],
+        grams: 236.58824, // 1 US cup = 236.5882365 mL
+    },
+    {
+        names: ['pint', 'pints', 'pt.', 'pt', 'pts.', 'pts'],
+        grams: 473.17647, // 1 US pint = 473.176473 mL
+    },
+    {
+        names: ['quart', 'quarts', 'qt.', 'qt', 'qts.', 'qts'],
+        grams: 946.35294, // 1 US quart = 946.352946 mL
+    },
     {
         names: ['gallon', 'gallons', 'gal.', 'gal', 'gals.', 'gals'],
-        grams: 3785.41,
+        grams: 3785.41178, // 1 US gallon = 3785.41178 mL
     },
-    { names: ['pound', 'pounds', 'lb.', 'lb', 'lbs.', 'lbs'], grams: 453.592 },
-    { names: ['gram', 'grams', 'g.', 'g', 'gs.', 'gs'], grams: 1 },
+    {
+        names: ['pound', 'pounds', 'lb.', 'lb', 'lbs.', 'lbs'],
+        grams: 453.59237, // 1 avoirdupois pound = 453.59237 g
+    },
+    {
+        names: ['gram', 'grams', 'g.', 'g', 'gs.', 'gs'],
+        grams: 1,
+    },
     {
         names: [
             'kilogram',
@@ -211,5 +226,51 @@ export const units = [
         ],
         grams: 1000,
     },
-    { names: ['liter', 'liters', 'l.', 'l', 'ls.', 'ls'], grams: 1000 },
+    {
+        names: [
+            'milliliter',
+            'milliliters',
+            'millilitre',
+            'millilitres',
+            'ml',
+            'mL',
+            'mls',
+            'mLs',
+        ],
+        grams: 1, // 1 mL of water = 1 g
+    },
+    {
+        names: [
+            'centiliter',
+            'centiliters',
+            'centilitre',
+            'centilitres',
+            'cl',
+            'cL',
+            'cls',
+            'cLs',
+        ],
+        grams: 10, // 1 cL = 10 mL
+    },
+    {
+        names: [
+            'deciliter',
+            'deciliters',
+            'decilitre',
+            'decilitres',
+            'dl',
+            'dL',
+            'dls',
+            'dLs',
+        ],
+        grams: 100, // 1 dL = 100 mL
+    },
+    {
+        names: ['liter', 'liters', 'litre', 'litres', 'l.', 'l', 'ls.', 'ls'],
+        grams: 1000,
+    },
+    {
+        names: ['stick', 'sticks'],
+        grams: 113.39809, // 1 stick of butter = 4 oz = 4 × 28.34952 g
+    },
 ];
