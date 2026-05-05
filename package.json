@@ -1,6 +1,6 @@
 {
   "name": "@jclind/ingredient-unit-converter",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "Converts between common ingredient units",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
