@@ -287,6 +287,274 @@ describe('stick (of butter)', () => {
   })
 })
 
+// ── tad ───────────────────────────────────────────────────────────────────────────
+
+describe('tad', () => {
+  it('tad resolves to ~1.232g', () => {
+    expect(converter(1, 'tad', 'grams').quantity).toBeCloseTo(1.232, 2)
+  })
+
+  it('tads alias resolves to the same value', () => {
+    expect(converter(2, 'tads', 'grams').quantity).toBeCloseTo(2.464, 2)
+  })
+
+  it('4 tads = 1 teaspoon', () => {
+    expect(converter(4, 'tad', 'teaspoon').quantity).toBeCloseTo(1, 2)
+  })
+})
+
+// ── splash ────────────────────────────────────────────────────────────────────────
+
+describe('splash', () => {
+  it('splash resolves to 10g', () => {
+    expect(converter(1, 'splash', 'grams').quantity).toBeCloseTo(10)
+  })
+
+  it('splashes alias resolves to the same value', () => {
+    expect(converter(2, 'splashes', 'grams').quantity).toBeCloseTo(20)
+  })
+})
+
+// ── milligram ─────────────────────────────────────────────────────────────────────
+
+describe('milligram', () => {
+  it('milligram resolves to 0.001g', () => {
+    expect(converter(1, 'milligram', 'grams').quantity).toBeCloseTo(0.001, 4)
+  })
+
+  it('mg alias resolves to 0.001g', () => {
+    expect(converter(1, 'mg', 'grams').quantity).toBeCloseTo(0.001, 4)
+  })
+
+  it('milligramme British spelling resolves', () => {
+    expect(converter(1, 'milligramme', 'grams').quantity).toBeCloseTo(0.001, 4)
+  })
+
+  it('1000 mg = 1 gram', () => {
+    expect(converter(1000, 'mg', 'gram').quantity).toBeCloseTo(1, 4)
+  })
+})
+
+// ── shot / jigger / pony ──────────────────────────────────────────────────────────
+
+describe('shot / jigger / pony', () => {
+  it('shot resolves to ~44.36g', () => {
+    expect(converter(1, 'shot', 'grams').quantity).toBeCloseTo(44.36, 1)
+  })
+
+  it('jigger alias resolves to the same value as shot', () => {
+    expect(converter(1, 'jigger', 'grams').quantity).toBeCloseTo(44.36, 1)
+  })
+
+  it('1 shot = 1.5 fluid ounces', () => {
+    expect(converter(1, 'shot', 'fluid ounce').quantity).toBeCloseTo(1.5, 2)
+  })
+
+  it('pony resolves to same as fluid ounce (~29.574g)', () => {
+    expect(converter(1, 'pony', 'grams').quantity).toBeCloseTo(29.574, 2)
+  })
+
+  it('ponies alias resolves to the same value', () => {
+    expect(converter(2, 'ponies', 'grams').quantity).toBeCloseTo(59.147, 2)
+  })
+
+  it('1 shot = 2 ponies', () => {
+    expect(converter(1, 'shot', 'pony').quantity).toBeCloseTo(1.5, 2)
+  })
+})
+
+// ── dry measures ──────────────────────────────────────────────────────────────────
+
+describe('dry measures', () => {
+  it('dry pint resolves to ~550.61g', () => {
+    expect(converter(1, 'dry pint', 'grams').quantity).toBeCloseTo(550.61, 1)
+  })
+
+  it('dry pint is larger than liquid pint', () => {
+    const dryPint = converter(1, 'dry pint', 'grams').quantity
+    const wetPint = converter(1, 'pint', 'grams').quantity
+    expect(dryPint).toBeGreaterThan(wetPint)
+  })
+
+  it('dry quart resolves to ~1101.22g', () => {
+    expect(converter(1, 'dry quart', 'grams').quantity).toBeCloseTo(1101.22, 1)
+  })
+
+  it('2 dry pints = 1 dry quart', () => {
+    expect(converter(2, 'dry pint', 'dry quart').quantity).toBeCloseTo(1, 2)
+  })
+
+  it('dry gallon resolves to ~4404.88g', () => {
+    expect(converter(1, 'dry gallon', 'grams').quantity).toBeCloseTo(4404.88, 1)
+  })
+
+  it('4 dry quarts = 1 dry gallon', () => {
+    expect(converter(4, 'dry quart', 'dry gallon').quantity).toBeCloseTo(1, 2)
+  })
+
+  it('peck resolves to ~8809.77g', () => {
+    expect(converter(1, 'peck', 'grams').quantity).toBeCloseTo(8809.77, 1)
+  })
+
+  it('pk alias resolves to the same value as peck', () => {
+    expect(converter(1, 'pk', 'grams').quantity).toBeCloseTo(8809.77, 1)
+  })
+
+  it('2 dry gallons = 1 peck', () => {
+    expect(converter(2, 'dry gallon', 'peck').quantity).toBeCloseTo(1, 2)
+  })
+
+  it('8 dry quarts = 1 peck', () => {
+    expect(converter(8, 'dry quart', 'peck').quantity).toBeCloseTo(1, 2)
+  })
+})
+
+// ── metric / au cup ───────────────────────────────────────────────────────────────
+
+describe('metric / au cup', () => {
+  it('metric cup resolves to 250g', () => {
+    expect(converter(1, 'metric cup', 'grams').quantity).toBeCloseTo(250)
+  })
+
+  it('au cup alias resolves to 250g', () => {
+    expect(converter(1, 'au cup', 'grams').quantity).toBeCloseTo(250)
+  })
+
+  it('australian cup alias resolves to 250g', () => {
+    expect(converter(1, 'australian cup', 'grams').quantity).toBeCloseTo(250)
+  })
+
+  it('metric cup is larger than US cup', () => {
+    const metricCup = converter(1, 'metric cup', 'grams').quantity
+    const usCup = converter(1, 'cup', 'grams').quantity
+    expect(metricCup).toBeGreaterThan(usCup)
+  })
+})
+
+// ── UK units ──────────────────────────────────────────────────────────────────────
+
+describe('uk units', () => {
+  it('uk teaspoon resolves to ~5.919g', () => {
+    expect(converter(1, 'uk teaspoon', 'grams').quantity).toBeCloseTo(5.919, 2)
+  })
+
+  it('uk tsp alias resolves to uk teaspoon', () => {
+    expect(converter(1, 'uk tsp', 'grams').quantity).toBeCloseTo(5.919, 2)
+  })
+
+  it('uk teaspoon is distinct from US teaspoon', () => {
+    const uk = converter(1, 'uk teaspoon', 'grams').quantity
+    const us = converter(1, 'teaspoon', 'grams').quantity
+    expect(uk).not.toBeCloseTo(us, 1)
+  })
+
+  it('uk tablespoon resolves to ~17.758g', () => {
+    expect(converter(1, 'uk tablespoon', 'grams').quantity).toBeCloseTo(17.758, 2)
+  })
+
+  it('uk tbsp alias resolves to uk tablespoon', () => {
+    expect(converter(1, 'uk tbsp', 'grams').quantity).toBeCloseTo(17.758, 2)
+  })
+
+  it('uk tablespoon is distinct from US tablespoon', () => {
+    const uk = converter(1, 'uk tablespoon', 'grams').quantity
+    const us = converter(1, 'tablespoon', 'grams').quantity
+    expect(uk).not.toBeCloseTo(us, 1)
+  })
+
+  it('uk fluid ounce resolves to ~28.413g', () => {
+    expect(converter(1, 'uk fluid ounce', 'grams').quantity).toBeCloseTo(28.413, 2)
+  })
+
+  it('uk fl.oz alias resolves to uk fluid ounce', () => {
+    expect(converter(1, 'uk fl.oz', 'grams').quantity).toBeCloseTo(28.413, 2)
+  })
+
+  it('uk fluid ounce is distinct from US fluid ounce', () => {
+    const uk = converter(1, 'uk fluid ounce', 'grams').quantity
+    const us = converter(1, 'fluid ounce', 'grams').quantity
+    expect(uk).not.toBeCloseTo(us, 1)
+  })
+
+  it('uk gill resolves to ~142.065g', () => {
+    expect(converter(1, 'uk gill', 'grams').quantity).toBeCloseTo(142.065, 2)
+  })
+
+  it('uk cup resolves to ~284.131g', () => {
+    expect(converter(1, 'uk cup', 'grams').quantity).toBeCloseTo(284.131, 2)
+  })
+
+  it('uk pint resolves to ~568.261g', () => {
+    expect(converter(1, 'uk pint', 'grams').quantity).toBeCloseTo(568.261, 2)
+  })
+
+  it('uk pint is larger than US pint', () => {
+    const uk = converter(1, 'uk pint', 'grams').quantity
+    const us = converter(1, 'pint', 'grams').quantity
+    expect(uk).toBeGreaterThan(us)
+  })
+
+  it('2 uk cups = 1 uk pint', () => {
+    expect(converter(2, 'uk cup', 'uk pint').quantity).toBeCloseTo(1, 2)
+  })
+
+  it('uk quart resolves to ~1136.523g', () => {
+    expect(converter(1, 'uk quart', 'grams').quantity).toBeCloseTo(1136.523, 2)
+  })
+
+  it('2 uk pints = 1 uk quart', () => {
+    expect(converter(2, 'uk pint', 'uk quart').quantity).toBeCloseTo(1, 2)
+  })
+
+  it('uk gallon resolves to ~4546.09g', () => {
+    expect(converter(1, 'uk gallon', 'grams').quantity).toBeCloseTo(4546.09, 1)
+  })
+
+  it('8 uk pints = 1 uk gallon', () => {
+    expect(converter(8, 'uk pint', 'uk gallon').quantity).toBeCloseTo(1, 2)
+  })
+
+  it('4 uk quarts = 1 uk gallon', () => {
+    expect(converter(4, 'uk quart', 'uk gallon').quantity).toBeCloseTo(1, 2)
+  })
+})
+
+// ── gō (Japanese measure) ─────────────────────────────────────────────────────────
+
+describe('gō', () => {
+  it('gō resolves to 180g', () => {
+    expect(converter(1, 'gō', 'grams').quantity).toBeCloseTo(180)
+  })
+
+  it('go alias resolves to 180g', () => {
+    expect(converter(1, 'go', 'grams').quantity).toBeCloseTo(180)
+  })
+
+  it('gou alias resolves to 180g', () => {
+    expect(converter(1, 'gou', 'grams').quantity).toBeCloseTo(180)
+  })
+
+  it('10 gō = 1800 mL (1 shō)', () => {
+    expect(converter(10, 'gō', 'milliliter').quantity).toBeCloseTo(1800)
+  })
+})
+
+// ── knob ─────────────────────────────────────────────────────────────────────────
+
+describe('knob', () => {
+  it('knob resolves to 10g', () => {
+    expect(converter(1, 'knob', 'grams').quantity).toBeCloseTo(10)
+  })
+
+  it('knobs alias resolves to the same value', () => {
+    expect(converter(2, 'knobs', 'grams').quantity).toBeCloseTo(20)
+  })
+
+  it('"knob of butter" phrase resolves', () => {
+    expect(converter(1, 'knob of butter', 'grams').quantity).toBeCloseTo(10)
+  })
+})
+
 // ── isValidUnit ───────────────────────────────────────────────────────────────
 
 describe('isValidUnit', () => {
@@ -385,12 +653,15 @@ describe('getSupportedUnits', () => {
   it('includes all expected canonical unit names', () => {
     const names = getSupportedUnits().map(u => u.name)
     for (const expected of [
-      'drop', 'smidgen', 'pinch', 'dash', 'saltspoon', 'coffeespoon',
-      'fluid dram', 'teaspoon', 'dessertspoon', 'tablespoon',
-      'oz.', 'fluid ounce', 'wineglass', 'gill',
-      'cup', 'pint', 'quart', 'gallon', 'pound',
-      'gram', 'kilogram',
-      'milliliter', 'centiliter', 'deciliter', 'liter', 'stick',
+      'drop', 'smidgen', 'pinch', 'dash', 'tad', 'saltspoon', 'coffeespoon',
+      'fluid dram', 'teaspoon', 'dessertspoon', 'splash', 'tablespoon',
+      'oz.', 'fluid ounce', 'shot', 'wineglass', 'gill', 'gō',
+      'cup', 'metric cup', 'pint', 'quart', 'gallon',
+      'uk teaspoon', 'uk tablespoon', 'uk fluid ounce', 'uk gill', 'uk cup',
+      'uk pint', 'uk quart', 'uk gallon',
+      'dry pint', 'dry quart', 'dry gallon', 'peck',
+      'pound', 'milligram', 'gram', 'kilogram',
+      'milliliter', 'centiliter', 'deciliter', 'liter', 'stick', 'knob',
     ]) {
       expect(names).toContain(expected)
     }

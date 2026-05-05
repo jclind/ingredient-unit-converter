@@ -42,6 +42,10 @@ export const units = [
     grams: 0.72,
   },
   {
+    names: ['tad', 'tads'],
+    grams: 1.23223, // ¼ US teaspoon = 4.92892 / 4 mL
+  },
+  {
     names: [
       'saltspoon',
       'salt spoon',
@@ -124,6 +128,10 @@ export const units = [
     grams: 9.85784, // 2 US teaspoons = 2 × 4.92892 mL
   },
   {
+    names: ['splash', 'splashes'],
+    grams: 10, // informal convention: ~10 mL, midpoint between 1 tsp and 1 tbsp
+  },
+  {
     names: [
       'tablespoon',
       'table spoon',
@@ -158,8 +166,14 @@ export const units = [
       'flozs',
       'fl.ozs',
       'flozs.',
+      'pony',
+      'ponies',
     ],
-    grams: 29.57353, // 1 US fluid ounce = 29.5735295625 mL
+    grams: 29.57353, // 1 US fluid ounce = 29.5735295625 mL; pony = 1 fl oz
+  },
+  {
+    names: ['shot', 'shots', 'jigger', 'jiggers'],
+    grams: 44.36030, // 1.5 US fl oz = 1.5 × 29.57353 mL
   },
   {
     names: [
@@ -190,8 +204,16 @@ export const units = [
     grams: 118.29412, // 4 US fluid ounces = 118.2941182 mL
   },
   {
+    names: ['gō', 'go', 'gou', 'gōs', 'gos', 'gous'],
+    grams: 180, // Japanese gō (合) = 180 mL; 10 gō = 1 shō (1800 mL)
+  },
+  {
     names: ['cup', 'cups', 'C.', 'C', 'c.', 'c', 'Cs.', 'Cs'],
     grams: 236.58824, // 1 US cup = 236.5882365 mL
+  },
+  {
+    names: ['metric cup', 'metric cups', 'au cup', 'au cups', 'australian cup', 'australian cups'],
+    grams: 250, // metric/Australian cup = 250 mL
   },
   {
     names: ['pint', 'pints', 'pt.', 'pt', 'pts.', 'pts'],
@@ -205,9 +227,63 @@ export const units = [
     names: ['gallon', 'gallons', 'gal.', 'gal', 'gals.', 'gals'],
     grams: 3785.41178, // 1 US gallon = 3785.41178 mL
   },
+  // UK imperial units
+  {
+    names: ['uk teaspoon', 'uk teaspoons', 'uk tsp'],
+    grams: 5.91939, // 1 UK teaspoon = 5.91939 mL
+  },
+  {
+    names: ['uk tablespoon', 'uk tablespoons', 'uk tbsp'],
+    grams: 17.75817, // 1 UK tablespoon = 3 UK teaspoons = 17.75817 mL
+  },
+  {
+    names: ['uk fluid ounce', 'uk fluid ounces', 'uk fl.oz', 'uk floz'],
+    grams: 28.41306, // 1 UK fluid ounce = 28.41306 mL
+  },
+  {
+    names: ['uk gill', 'uk gills'],
+    grams: 142.06531, // ¼ UK pint = 568.26125 / 4 mL
+  },
+  {
+    names: ['uk cup', 'uk cups'],
+    grams: 284.13063, // ½ UK pint = 568.26125 / 2 mL
+  },
+  {
+    names: ['uk pint', 'uk pints'],
+    grams: 568.26125, // 1 UK pint = 568.26125 mL
+  },
+  {
+    names: ['uk quart', 'uk quarts'],
+    grams: 1136.52250, // 2 UK pints = 1136.52250 mL
+  },
+  {
+    names: ['uk gallon', 'uk gallons'],
+    grams: 4546.09000, // 8 UK pints = 4546.09000 mL
+  },
+  // US dry measures
+  {
+    names: ['dry pint', 'dry pints'],
+    grams: 550.61047, // 1 US dry pint = 550.61047 mL
+  },
+  {
+    names: ['dry quart', 'dry quarts'],
+    grams: 1101.22095, // 2 US dry pints = 1101.22095 mL
+  },
+  {
+    names: ['dry gallon', 'dry gallons'],
+    grams: 4404.88377, // 4 US dry quarts = 4404.88377 mL
+  },
+  {
+    names: ['peck', 'pecks', 'pk.', 'pk', 'pks.', 'pks'],
+    grams: 8809.76755, // 2 dry gallons = 8 dry quarts = 8809.76755 mL
+  },
   {
     names: ['pound', 'pounds', 'lb.', 'lb', 'lbs.', 'lbs'],
     grams: 453.59237, // 1 avoirdupois pound = 453.59237 g
+  },
+  {
+    names: ['milligram', 'milligrams', 'milligramme', 'milligrammes', 'mg'],
+    grams: 0.001,
   },
   {
     names: ['gram', 'grams', 'g.', 'g', 'gs.', 'gs'],
@@ -272,5 +348,9 @@ export const units = [
   {
     names: ['stick', 'sticks'],
     grams: 113.39809, // 1 stick of butter = 4 oz = 4 × 28.34952 g
+  },
+  {
+    names: ['knob', 'knobs', 'knob of butter', 'knobs of butter'],
+    grams: 10, // informal convention: ~10 g, typical British recipe usage
   },
 ]
